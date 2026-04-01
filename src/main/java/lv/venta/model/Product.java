@@ -88,7 +88,7 @@ public class Product {
 	//toString
 	@Override
 	public String toString() {
-		String result = id + " " + title + " " + description + " " + price + " " + quantity;
+		String result = id + " " + title + " " + description + " " + price + " " + quantity + " " + productType;
 		return result;
 	}
 }
