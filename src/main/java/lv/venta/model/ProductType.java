@@ -1,0 +1,6 @@
+package lv.venta.model;
+
+public enum ProductType {
+	fruit, computer, vegetable, unknown, other
+
+}
