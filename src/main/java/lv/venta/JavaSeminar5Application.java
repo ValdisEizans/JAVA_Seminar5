@@ -30,6 +30,9 @@ public class JavaSeminar5Application {
 				productRepo.save(prod2);
 				productRepo.save(prod3);
 				
+				//cik produktu
+				//veikt update
+				//veikt dzesanu
 			}
 		};
 	}
