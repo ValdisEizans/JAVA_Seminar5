@@ -64,4 +64,18 @@ public class SimpleController {
 		System.out.println(product);
 		return "redirect:/simple/page";
 	}
-}
+
+	@GetMapping("/update")//localhost:8080/simple/update
+	public String getUpdateProduct(Model model) {
+		//TO DO filtrs konkreta produkta atrasanai
+		Product prod = new Product("Abols", 0.95f, 5, "Garsigs", ProductType.fruit);
+		model.addAttribute("product",prod);
+		return "update-product-page";
+	}
+	
+	@PostMapping("/update")
+	public String postUpdateProduct(Product product) {
+		//TO DO datu parbaude un saglabasanu
+		System.out.println(product);
+		return "redirect:/simple/page";
+	}}
