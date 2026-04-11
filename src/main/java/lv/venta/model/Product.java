@@ -51,8 +51,9 @@ public class Product {
 	
 	
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId() {
+		id = counter;
+		counter++;
 	}
 
 	public void setTitle(String title) {
@@ -76,9 +77,11 @@ public class Product {
 	}
 	
 	//Bezaurgumenta konstruktori -  nak no Lombok
+	public Product () {}
 	
 	//Argumenta konstruktori -  nak no Lombok
 	public Product(String inputTitle, float inputPrice, int inputQuantity, String inputDescription, ProductType inputProductType ) {
+		setId();
 		setTitle(inputTitle);
 		setDescription(inputDescription);
 		setPrice(inputPrice);

@@ -2,14 +2,14 @@
 	
 	<body>
 		<h1>Visi produkti no JAVA!</h1>
-		<table>
-		<tr th:each="prod : ${package}">
-			<td th:text="${prod.id}"></td>
-			<td th:text="${prod.title}"></td>
-			<td th:text="${prod.description}"></td>
-			<td th:text="${prod.price}"></td>
-			<td th:text="${prod.quantity}"></td>
-			<td th:text="${prod.productType}"></td>
+		<table style="border: 1px solid black;">
+		<tr th:each="prod : ${package}" style="border: 1px solid black;">
+			<td th:text="${prod.id}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.title}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.description}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.price}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.quantity}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.productType}" style="border: 1px solid black;"></td>
 		</tr>
 		</table>
 	</body>

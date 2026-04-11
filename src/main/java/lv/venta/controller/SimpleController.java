@@ -6,6 +6,7 @@ import java.util.Random;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lv.venta.model.Product;
@@ -50,5 +51,17 @@ public class SimpleController {
 		return "show-three-product-page";
 	}
 	
+	@GetMapping("/add")//localhost:8080/simple/add
+	public String getAddNewProduct(Model model) {
+		model.addAttribute("product", new Product());
+		return "add-new-product-page";
+
+	}
 	
+	@PostMapping("/add")
+	public String postAddNewProduct(Product product) {
+		//TO DO datu parbaude un saglabasanu
+		System.out.println(product);
+		return "redirect:/simple/page";
+	}
 }
