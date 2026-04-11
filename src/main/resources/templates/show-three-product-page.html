@@ -1,15 +1,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	
 	<body>
-		<h1>Produkti no JAVA!</h1>
-		
-		<p th:each="prod : ${package}">
-			<p th:text="${prod.getId}"></p>
-			<p th:text="${prod.getTitle}"></p>
-			<p th:text="${prod.getDescription}"></p>
-			<p th:text="${prod.getPrice}"></p>
-			<p th:text="${prod.getQuantity}"></p>
-			<p th:text="${prod.getProductType}"></p>
-		</p>
+		<h1>Visi produkti no JAVA!</h1>
+		<table>
+		<tr th:each="prod : ${package}">
+			<td th:text="${prod.id}"></td>
+			<td th:text="${prod.title}"></td>
+			<td th:text="${prod.description}"></td>
+			<td th:text="${prod.price}"></td>
+			<td th:text="${prod.quantity}"></td>
+			<td th:text="${prod.productType}"></td>
+		</tr>
+		</table>
 	</body>
 </html>

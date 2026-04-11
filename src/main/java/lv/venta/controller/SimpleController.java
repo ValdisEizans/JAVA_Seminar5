@@ -40,9 +40,9 @@ public class SimpleController {
 	@GetMapping("/three_products")//localhost:8080/simple/three_products
 	public String getThreeProductsInPage(Model model) {
 		ArrayList<Product> produkti = new ArrayList<Product>();
-		Product prod1 = new Product("Abols", 0.95f, 5, "Garsigs", ProductType.fruit);
-		Product prod2 = new Product("Burkans", 5.99f, 5, "Super", ProductType.vegetable);
-		Product prod3 = new Product("Biete", 1.05f, 5, "Nearsigs", ProductType.vegetable);
+		Product prod1 = new Product("Abols", 6.95f, 5, "Garsigs", ProductType.fruit);
+		Product prod2 = new Product("Burkans", 0.99f, 5, "Super", ProductType.vegetable);
+		Product prod3 = new Product("Biete", 1.05f, 5, "Negarsigs", ProductType.vegetable);
 		produkti.add(prod1);
 		produkti.add(prod2);
 		produkti.add(prod3);
