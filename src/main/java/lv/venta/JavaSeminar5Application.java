@@ -22,7 +22,7 @@ public class JavaSeminar5Application {
 			
 			@Override
 			public void run(String... args) throws Exception {
-				Product prod1 = new Product("Abols", 7.95f, 5, "Garsigs", ProductType.fruit);
+				Product prod1 = new Product("Abols", 7.95f, 8, "Garsigs", ProductType.fruit);
 				Product prod2 = new Product("Burkans", 0.99f, 5, "Super", ProductType.vegetable);
 				Product prod3 = new Product("Biete", 1.05f, 5, "Negarsigs", ProductType.vegetable);				
 				

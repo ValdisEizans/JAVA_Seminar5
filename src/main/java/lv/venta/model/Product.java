@@ -32,7 +32,7 @@ public class Product {
 	private long id;
 	
 	@Column(name = "Title")
-	@NotNull
+	@NotNull(message = "Nosaukumam jabut aizpilditam!")
 	@NotEmpty
 	@Pattern(regexp = "[A-Z]{1}[a-z ]{2,30}")
 	private String title; 
