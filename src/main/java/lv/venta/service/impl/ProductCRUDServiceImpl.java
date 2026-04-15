@@ -20,8 +20,20 @@ public class ProductCRUDServiceImpl implements IProductCRUDService{
 	@Override
 	public void createNewProduct(String title, float price, int quantity, String description, ProductType type)
 			throws Exception {
-		// TODO Auto-generated method stub
-		
+		if(title == null || !title.matches("[A-Z]{1}[a-z ]{2,30}") || price < 0 || price > 1000 || quantity < 0 || quantity > 100 ||  description == null || description.matches("[A-Z]{1}[A-Za-z0-9,. ]{2,150}") || type == null) {
+			throw new Exception("Nekorekti ievades dati!");
+		}
+		//ja tads produkts jau eksiste, papildina krajumus
+		if(prodRepo.existsByTitleAndPriceAndDescriptionAndProductType(title, price, description, type)) {
+			Product productFromDB = prodRepo.findByTitleAndPriceAndDescriptionAndProductType(title, price, description, type);
+			int newQantity = productFromDB.getQuantity() + quantity;
+			productFromDB.setQuantity(newQantity);
+			prodRepo.save(productFromDB);//izpildas UPDATE
+		}
+		else {
+			Product newProduct = new Product(title, price, quantity, description, type);
+			prodRepo.save(newProduct);//izpildas INSERT
+		}
 	}
 
 	@Override
