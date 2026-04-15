@@ -64,7 +64,30 @@ public class ProductCRUDServiceImpl implements IProductCRUDService{
 	@Override
 	public void updateProductById(long id, String title, float price, int quantity, String description,
 			ProductType type) throws Exception {
-		// TODO Auto-generated method stub
+		//parbauda vai produkts eksiste
+		Product ProductFromDb = retrieveProductById(id);
+
+		if(title == null || !title.matches("[A-Z]{1}[a-z ]{2,30}") || price < 0 || price > 1000 || quantity < 0 || quantity > 100 ||  description == null || description.matches("[A-Z]{1}[A-Za-z0-9,. ]{2,150}") || type == null) {
+			throw new Exception("Nekorekti ievades dati!");
+		}
+		if(!ProductFromDb.getTitle().equals(title)) {
+			ProductFromDb.setTitle(title);
+		}
+		if (ProductFromDb.getPrice() != price) {
+			ProductFromDb.setPrice(price);
+			
+		}
+		if(ProductFromDb.getQuantity() != quantity) {
+			ProductFromDb.setQuantity(quantity);
+		}
+		if(!ProductFromDb.getDescription().equals(description)) {
+			ProductFromDb.setDescription(description);
+		}
+		if(ProductFromDb.getProductType().equals(type)) {
+			ProductFromDb.setProductType(type);
+		}
+		
+		prodRepo.save(ProductFromDb);
 		
 	}
 
