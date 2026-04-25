@@ -2,11 +2,15 @@
 	
 	<body>
 		<h1>Produkts no JAVA!</h1>
-		<p th:text="${package.id}"></p>
-		<p th:text="${package.title}"></p>
-		<p th:text="${package.description}"></p>
-		<p th:text="${package.price}"></p>
-		<p th:text="${package.quantity}"></p>
-		<p th:text="${package.productType}"></p>
+		<table>
+		<tr>
+		<td th:text="${package.id}" style="border: 1px solid black;"></td>
+		<td th:text="${package.title}" style="border: 1px solid black;"></td>
+		<td th:text="${package.description}" style="border: 1px solid black;"></td>
+		<td th:text="${package.price}" style="border: 1px solid black;"></td>
+		<td th:text="${package.quantity}" style="border: 1px solid black;"></td>
+		<td th:text="${package.productType}" style="border: 1px solid black;"></td>
+		</tr>
+		</table>
 	</body>
 </html>
