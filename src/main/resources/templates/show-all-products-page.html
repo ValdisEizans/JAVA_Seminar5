@@ -2,6 +2,7 @@
 	
 	<body>
 		<h1>Visi produkti no JAVA!</h1>
+		<h1 th:text="${header}"></h1>
 		<table style="border: 1px solid black;">
 		<tr th:each="prod : ${package}" style="border: 1px solid black;">
 			<td th:text="${prod.id}" style="border: 1px solid black;"></td>
