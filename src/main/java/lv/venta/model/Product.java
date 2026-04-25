@@ -50,7 +50,7 @@ public class Product {
 	@Column(name = "Description")
 	@NotNull
 	@NotEmpty
-	@Pattern(regexp = "[A-Z]{1}[A-Za-z0-9,. ]{2,150}")
+	@Pattern(regexp = "[A-Z]{1}[A-Za-z0-9,. ]{2,150}", message="Drikst saturet tikai burtus un ciparus")
 	private String description;
 	
 	@Column(name = "ProductType")
