@@ -25,7 +25,7 @@ public class ProductFilterController {
 		try {
 			ArrayList<Product> productFromDB = prodFilterService.retrieveProductByPriceLessThan(threshold);
 			model.addAttribute("package", productFromDB);
-			model.addAttribute("header", "Produkti, kuru cena mazaka par" + threshold + " eur");
+			model.addAttribute("header", "Produkti, kuru cena mazaka par " + threshold + " eur");
 			return "show-all-products-page";
 		}
 		catch (Exception e) {
@@ -47,5 +47,31 @@ public class ProductFilterController {
 			return "error-page";
 		}
 	}
+	
+	@GetMapping("/keyword/{keyword}")//localhost:8080/product/filter/keyword/ban
+	public String getFilterProductsByType(@PathVariable(name = "keyword") String keyword, Model model) {
+		try {
+			ArrayList<Product> productFromDB = prodFilterService.retrieveProductByKeyWord(keyword);
+			model.addAttribute("package", productFromDB);
+			model.addAttribute("header", "Produkti, kuru nosaukums vai apraksts satur " + keyword);
+			return "show-all-products-page";
+		}
+		catch (Exception e) {
+			model.addAttribute("package", e.getMessage());
+			return "error-page";
+		}
+	}
 
+	@GetMapping("/avg_price")//localhost:8080/product/filter/avg_price
+	public String getAveragePrice(Model model) {
+		try {
+			model.addAttribute("package", prodFilterService.calculateAveragePrice());
+			model.addAttribute("header", "Visu veikala produktu videja cena:");
+			return "average-price-page";
+		}
+		catch (Exception e) {
+			model.addAttribute("package", e.getMessage());
+			return "error-page";
+		}
+	}
 }
