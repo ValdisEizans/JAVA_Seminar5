@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<body>
+		<h1>Visi produkti no JAVA!</h1>
+		<table style="border: 1px solid black;">
+		<tr th:each="prod : ${package}" style="border: 1px solid black;">
+			<td th:text="${prod.id}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.title}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.description}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.price}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.quantity}" style="border: 1px solid black;"></td>
+			<td th:text="${prod.productType}" style="border: 1px solid black;"></td>
+		</tr>
+		</table>
+	</body>
+</html>

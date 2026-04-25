@@ -17,7 +17,7 @@ public class ProductCRUDController {
 	@Autowired
 	private IProductCRUDService prodService;
 	
-	@GetMapping("/all")//localhost:8080//product/crud/all
+	@GetMapping("/all")//localhost:8080/product/crud/all
 	public String getAllProducts(Model model) {
 		try {
 			model.addAttribute("package", prodService.retrieveAll());
