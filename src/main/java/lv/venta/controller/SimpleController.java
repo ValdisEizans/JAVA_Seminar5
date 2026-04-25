@@ -78,4 +78,5 @@ public class SimpleController {
 		//TO DO datu parbaude un saglabasanu
 		System.out.println(product);
 		return "redirect:/simple/page";
-	}}
+	}
+}
