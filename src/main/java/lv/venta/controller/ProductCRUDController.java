@@ -24,6 +24,7 @@ public class ProductCRUDController {
 			return "show-all-products-page";
 		}
 		catch (Exception e) {
+			model.addAttribute("package", e.getMessage());
 			return "error-page";
 		}
 
