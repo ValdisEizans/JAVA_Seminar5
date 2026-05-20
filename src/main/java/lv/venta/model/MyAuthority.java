@@ -42,9 +42,9 @@ public class MyAuthority {
 	@Pattern(regexp = "[A-Z_]{4,10}")
 	private String title;
 	
-	@OneToMany(mappedBy = "authority")
+	@OneToMany(mappedBy =  "authority")
 	@ToString.Exclude
-	private Collection<MyUser> user = new ArrayList();
+	private Collection<MyUser> users = new ArrayList<>();
 	
 	public MyAuthority(String title) {
 		setTitle(title);
