@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -39,12 +42,17 @@ public class MyUser {
 	@NotNull(message = "Parolei jabut aizpilditam!")
 	@NotEmpty
 	//Neliekam patern jo te glabajas encoded parole
-	private String password; 
+	private String password;
+	
+	@ManyToOne
+	@JoinColumn(name="Ida")
+	private MyAuthority authority;
 
 	//Argumenta konstruktors
-//	public MyUser(String username, String password) {
-//		setUsername(username);
-//		setPassword(password);
-//	}
+	public MyUser(String username, String password, MyAuthority authority) {
+		setUsername(username);
+		setPassword(password);
+		setAuthority(authority);
+	}
 	
 }
