@@ -19,7 +19,7 @@ public class MyUserDetailsManagerService implements UserDetailsManager{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		if(userRepo.existsByUsername(username)) {
-			MyUser userFromDB = userRepo.findbyUsername(username);
+			MyUser userFromDB = userRepo.findByUsername(username);
 			MyUserDetails userDetails = new MyUserDetails(userFromDB);
 			return userDetails;
 		}

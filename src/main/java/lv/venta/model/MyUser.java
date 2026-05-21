@@ -27,7 +27,7 @@ import lombok.ToString;
 public class MyUser {
 	@Setter(value = AccessLevel.NONE)
 	//Mainigie
-	@Column(name = "Idu")
+	@Column(name = "IdU")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idu;

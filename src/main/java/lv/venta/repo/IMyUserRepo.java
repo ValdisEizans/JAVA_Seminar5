@@ -8,6 +8,6 @@ public interface IMyUserRepo extends CrudRepository<MyUser, Long>{
 
 	boolean existsByUsername(String username);
 
-	MyUser findbyUsername(String username);
+	MyUser findByUsername(String username);
 
 }
